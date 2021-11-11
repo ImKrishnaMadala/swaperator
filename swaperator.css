@@ -159,6 +159,8 @@ body {
 /*I want to kill myself in the same manner as the secondary lead from squid game */
 .loading {
     font-size: 30px;
+    text-align: center;
+    display: inline;
   }
   
   .loading:after {
