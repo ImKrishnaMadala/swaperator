@@ -5,14 +5,18 @@ from web3 import Web3
 import time
 
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder="templates")
 w3 = Web3(Web3.HTTPProvider(config.INFURA_URL))
+
+def get_ethereum_price():
+    binance = ccxt.binance()
+    ethereum_price = binance.fetch_ticker('ETH/USDC')
+
+    return ethereum_price
 
 @app.route("/")
 def index():
-    binance = ccxt.binance()
-    ethereum_price = binance.fetch_ticker('ETH/USDC')
-    
+    ethereum_price = get_ethereum_price()
 
     eth = w3.eth
     latest_blocks = []
@@ -26,6 +30,7 @@ def index():
         latest_transactions.append(transaction)
 
     current_time = time.time()
+
 
     return render_template("index.html",ethereum_price=ethereum_price, latest_blocks=latest_blocks, latest_transactions=latest_transactions)
 
