@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+web3 = "*"
 ccxt = "*"
 Flask = "==2.0.2"
 
