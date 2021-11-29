@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 ccxt = "*"
 Flask = "==2.0.2"
-web3 = "*"
+web3 = "==5.25.0"
 
 [dev-packages]
 
