@@ -24,8 +24,8 @@ def index():
         latest_blocks.append(block)
 
     latest_transactions = []
-    for tx in latest_blocks[-1]['transactions'][-10:]:
-        transaction = eth.get_transaction(tx)
+    for txn in latest_blocks[-1]['transactions'][-10:]:
+        transaction = eth.get_transaction(txn)
         latest_transactions.append(transaction)
 
     current_time = time.time()
@@ -63,15 +63,16 @@ def block(block_number):
 
 @app.get('/transaction/<hash>')
 def transaction(hash):
-    tx = w3.eth.get_transaction(hash)
-    value = w3.fromWei(tx.value, 'ether')
+    txn = w3.eth.get_transaction(hash)
+    value = w3.fromWei(txn.value, 'ether')
     receipt = w3.eth.get_transaction_receipt(hash)
     ethereum_price = get_ethereum_price()
 
-    gas_price = w3.fromWei(tx.gasPrice, 'ether')
+    gas_price = w3.fromWei(txn.gasPrice, 'ether')
 
-    return render_template('transaction.html', tx=tx, value=value, receipt=receipt, gas_price=gas_price, ethereum_price=ethereum_price)
+    return render_template('transaction.html', txn=txn, value=value, receipt=receipt, gas_price=gas_price, ethereum_price=ethereum_price)
 
+app.jinja_env.cache = {}
 
 if __name__ == "__main__":
     from waitress import serve

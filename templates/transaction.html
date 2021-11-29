@@ -3,22 +3,22 @@
 {% block content %}
 
 <div class="container mt-4">
-    <h3> Transaction {{ tx.hash.hex() }}</h3>
+    <h3> Transaction {{ txn.hash.hex() }}</h3>
 
     <table class="table table-striped mt-4">
         <tr>
             <td>block number</td>
             <td>
-                <a href="/block/{{ tx.blockNumber }}">{{ tx.blockNumber }}</a>
+                <a href="/block/{{ txn.blockNumber }}">{{ txn.blockNumber }}</a>
             </td>
         </tr>
         <tr>
             <td>from</td>
-            <td>{{ tx.from }}</td>
+            <td>{{ txn.from }}</td>
         </tr>
         <tr>
             <td>to</td>
-            <td>{{ tx.to }}</td>
+            <td>{{ txn.to }}</td>
         </tr>
         <tr>
             <td>value</td>
@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <td>gas price</td>
-            <td>{{ tx.gasPrice / 1000000000 }} Gwei</td>
+            <td>{{ txn.gasPrice / 1000000000 }} Gwei</td>
         </tr>
         <tr>
             <td>transaction fee</td>
