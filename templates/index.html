@@ -1,12 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<head>
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<div id="loader"></div>
-    <div id="content">
+<head></head>
 <div class="container">
     <div class="row mt-4 mb-4">
         <div class="col-3">
@@ -75,11 +70,5 @@
         </div>
     </div>
 </div>
-<script>
-    var preloader = document.getElementById('loader');
-    function preLoaderHandler(){
-        preloader.style.display = 'none';
-    }
-  </script>
 
 {% endblock %}
