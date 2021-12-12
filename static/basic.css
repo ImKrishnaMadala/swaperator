@@ -9,7 +9,13 @@
   }
 
 .addresssform { 
-    margin: 0 auto; 
+    margin-left: auto;
+    margin-right: auto;
     width:5vw;
     }
-    
+
+    .center {
+        margin: auto;
+        width: 35vw;
+        padding: 10px;
+      }
