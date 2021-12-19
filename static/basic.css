@@ -1,5 +1,6 @@
 .headerimg {
     width: 20vw;
+    min-width: 200px;
     height: auto;
     display: block;
     padding-top: 4vw;
@@ -14,6 +15,9 @@
     width:5vw;
     }
 
+.col-md-auto {
+    min-width: 200px;
+}
 .center {
         margin: auto;
         width: 35vw;
@@ -73,10 +77,3 @@
         filter: blur(3px);
         opacity: 0.6;
       }
-.coolcat {
-    text-align: center;
-    margin: auto;
-
-
-
-}
