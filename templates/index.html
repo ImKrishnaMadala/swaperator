@@ -12,6 +12,8 @@
         <meta content="Swaperator is a platform for trusted and transparent exchanges of nft tokens and cryptocurrencies in the metaverse" property="twitter:description">
         <meta name="viewport" content="width=device-width, initial-scale=1">    
         <link href="/static/basic.css" rel="stylesheet">
+        <link href="/static/killme.css" rel="stylesheet">
+    
         <meta http-equiv="refresh" content="10" >
 
 </head>
@@ -34,8 +36,8 @@
         </div>
         <div class="center">
             
-
-            <table class="table table-striped">
+            <div class="tbl-content">
+                  
                 {% for transaction in latest_transactions %}
                 <tr>
                     <td>
@@ -52,15 +54,20 @@
                             <strong>To</strong>
                             <a href="/address?address={{ transaction['from'] }}">
                                 {{ transaction['to'] }}</a>
+                                <tr class="border-bottom"></tr>
+
                         </p>
                     </td>
                 </tr>
+                <hr>
                 {% endfor %}
             </table>
+            
         </div>
     </div>
 </div>
 
+<script src="/static/PainAndSuffering.js" type="text/javascript"></script>
 <script src="/static/basic.js" type="text/javascript"></script>
 </body>
 {% endblock %}
